@@ -11,10 +11,10 @@
 
   <cpn>
     <!--目的是获取子组件中的pLanguages, 更高的版本是不需要通过template来包装的，也就是可以采用其他标签 -->
-    <template slot-scope="slot">
+    <div slot-scope="slot">
       <!--<span v-for="item in slot.data"> - {{item}}</span>-->
       <span>{{slot.data.join(' - ')}}</span>
-    </template>
+    </div>
   </cpn>
 
   <cpn>
@@ -24,7 +24,9 @@
       <span>{{slot.data.join(' * ')}}</span>
     </template>
   </cpn>
-  <!--<cpn></cpn>-->
+
+<!--  当没有指定作用域插槽数据时，作用域插槽就是普通插槽简单将内容替换 -->
+  <cpn><span>span</span></cpn>
 </div>
 
 <template id="cpn">
