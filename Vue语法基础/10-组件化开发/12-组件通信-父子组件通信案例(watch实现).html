@@ -55,11 +55,11 @@
           }
         },
         watch: {
-          dnumber1(newValue) {
+          dnumber1(newValue, oldValue) {
             this.dnumber2 = newValue * 100;
             this.$emit('num1change', newValue);
           },
-          dnumber2(newValue) {
+          dnumber2(newValue, oldValue) {
             this.number1 = newValue / 100;
             this.$emit('num2change', newValue);
           }
